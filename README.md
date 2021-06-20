@@ -1,7 +1,7 @@
 ## Analysis of the TITAN fall
 
 Read blog post:  
-[Analysis of the TITAN fall](https://jeiwan.net/posts/analisys-titan-fall/)
+[Analysis of the TITAN fall](https://jeiwan.net/posts/analysis-titan-fall/)
 
 ### Run
 
