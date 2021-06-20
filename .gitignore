@@ -1,0 +1,13 @@
+*.log
+*.tern-port
+*.tsbuildinfo
+.DS_Store
+.envrc
+.eslintcache
+.idea
+.npm
+node_modules/
+npm-debug.log*
+tmp/
+yarn-debug.log*
+yarn-error.log*

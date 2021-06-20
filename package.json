@@ -1,0 +1,10 @@
+{
+  "name": "irondown",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.29.1",
+    "web3": "^1.3.6"
+  }
+}
