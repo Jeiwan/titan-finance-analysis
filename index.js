@@ -42,8 +42,8 @@ function titanPrice(titanReserve, wmaticReserve, wmaticPrice) {
 }
 
 function arbProfit(ironPrice, titanPrice, titanPriceAMM, ecr) {
-  const usdcValue = ironPrice * ecr;
-  const titanValue = ironPrice * (1 - ecr);
+  const usdcValue = 1.0 * ecr;
+  const titanValue = 1.0 * (1 - ecr);
   const titanAmount = titanValue / titanPrice;
 
   return (usdcValue + titanAmount * titanPriceAMM - ironPrice).toFixed(4);
