@@ -129,12 +129,12 @@ async function collectData() {
 
     data[blockNumber] = {
       Date: formatDate(new Date(block.timestamp * 1000)),
-      // "IRON total supply": formatBigString(
-      //   utils.fromWei(dollarSupply, "ether")
-      // ),
-      // "TITAN total supply": formatBigString(
-      //   utils.fromWei(shareSupply, "ether")
-      // ),
+      "IRON total supply": formatBigString(
+        utils.fromWei(dollarSupply, "ether")
+      ),
+      "TITAN total supply": formatBigString(
+        utils.fromWei(shareSupply, "ether")
+      ),
       "IRON price": ironPrice,
       "TITAN price": utils.fromWei(sharePrice, "mwei"),
       "TITAN price, AMM": titanUSD,
