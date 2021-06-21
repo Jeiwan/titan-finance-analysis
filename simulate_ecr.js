@@ -3,7 +3,7 @@ const { arbProfit } = require("./helpers.js");
 
 const newData = Object.entries(data).reduce(function (m, p) {
   const [k, v] = p;
-  const simECR = (parseFloat(v["ECR"]) * 1.1).toFixed(4);
+  const simECR = (parseFloat(v["ECR"]) * 1.15).toFixed(4);
   const simArbProfit =
     parseFloat(v["IRON price"]) > 1.0
       ? null
