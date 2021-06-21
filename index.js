@@ -5,7 +5,13 @@ const dollarABI = require("./dollar.json");
 const shareABI = require("./share.json");
 const treasuryABI = require("./treasury.json");
 const pairABI = require("./pair.json");
-const moment = require("moment");
+const {
+  formatBigString,
+  formatDate,
+  wmaticPrice,
+  titanPrice,
+  arbProfit,
+} = require("./helpers.js");
 
 const nodeURL = process.env.ARCHIVE_NODE_URL; // Get one from https://moralis.io/, use a 'Mainnet Archive' speedy Polygon node
 const nodeURL2 = "https://rpc-mainnet.maticvigil.com";
@@ -18,36 +24,6 @@ const pairMaticAddress = "0xcd353f79d9fade311fc3119b841e1f456b54e858";
 
 const startBlock = 15764168;
 const blocksPerHour = 1600;
-
-function formatBigString(s) {
-  return parseFloat(s).toLocaleString();
-}
-
-function formatDate(date) {
-  return moment.utc(date).format("MMM, DD HH:mm");
-}
-
-function wmaticPrice(wmaticReserve, usdcReserve) {
-  return (
-    utils.fromWei(usdcReserve, "mwei") / utils.fromWei(wmaticReserve, "ether")
-  ).toFixed(4);
-}
-
-function titanPrice(titanReserve, wmaticReserve, wmaticPrice) {
-  return (
-    (utils.fromWei(wmaticReserve, "ether") /
-      utils.fromWei(titanReserve, "ether")) *
-    wmaticPrice
-  ).toFixed(4);
-}
-
-function arbProfit(ironPrice, titanPrice, titanPriceAMM, ecr) {
-  const usdcValue = 1.0 * ecr;
-  const titanValue = 1.0 * (1 - ecr);
-  const titanAmount = titanValue / titanPrice;
-
-  return (usdcValue + titanAmount * titanPriceAMM - ironPrice).toFixed(4);
-}
 
 // ============================================================
 
