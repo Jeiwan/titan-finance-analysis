@@ -3,7 +3,7 @@ const { arbProfit } = require("./helpers.js");
 
 const newData = Object.entries(data).reduce(function (m, p) {
   const [k, v] = p;
-  const simECR = (parseFloat(v["ECR"]) * 1.15).toFixed(4);
+  const simECR = parseFloat(v["ECR"]) * 1.15;
   const simArbProfit =
     parseFloat(v["IRON price"]) > 1.0
       ? null
@@ -15,7 +15,7 @@ const newData = Object.entries(data).reduce(function (m, p) {
         );
 
   v["Arb profit, simulated"] = simArbProfit;
-  v["ECR, simulated"] = simECR;
+  v["ECR, simulated"] = simECR.toFixed(4);
 
   delete v["TCR"];
   delete v["IRON total supply"];
