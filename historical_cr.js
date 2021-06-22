@@ -36,7 +36,7 @@ timestampToBlockNum(endTime);
 (async () => {
   const data = JSON.parse(fs.readFileSync("data_cr.json"));
 
-  for (let i = 1623416400 /*startTime*/; i <= endTime; i += hour) {
+  for (let i = startTime; i <= endTime; i += hour) {
     console.log("Collecting data, timestamp ", i);
 
     const blockNumber = await timestampToBlockNum(i);
