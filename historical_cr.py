@@ -16,21 +16,18 @@ y5 = [1.0 if float(crdata[k]["IRON price"]) <= 1.0 else None for k in x]
 
 fig, ax = plt.subplots()
 
-line1 = ax.plot(x, y1, label="TCR")
-line2 = ax.plot(x, y2, label="ECR")
-
+ax.plot(x, y1, label="TCR")
+ax.plot(x, y2, label="ECR")
 ax.set_xlabel("Time")
 ax.set_ylabel("ECR/TCR")
 
 ax2 = ax.twinx()
-line3 = ax2.plot(x, y3, label="TITAN price", color="red")
-
+ax2.plot(x, y3, label="TITAN price", color="red")
 ax2.set_ylabel("TITAN price, $")
 
 ax3 = ax.twinx()
-scat1 = ax3.scatter(x, y4, label="IRON > $1", s=1, color="green")
-scat2 = ax3.scatter(x, y5, label="IRON <= $1", s=1, color="red")
-
+ax3.scatter(x, y4, label="IRON > $1", s=1, color="green")
+ax3.scatter(x, y5, label="IRON <= $1", s=1, color="red")
 ax3.set_ylim(ymin=0, ymax=60)
 ax3.set_yticks([])
 
