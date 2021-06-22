@@ -31,8 +31,6 @@ const hour = 3600;
 const startTime = Math.ceil(1622274115 / hour) * hour; // Treasury creation time
 const endTime = Math.ceil(1623891602 / hour) * hour; // June 17, 2 AM
 
-timestampToBlockNum(endTime);
-
 (async () => {
   const data = JSON.parse(fs.readFileSync("data_cr.json"));
 
